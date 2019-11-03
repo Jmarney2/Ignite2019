@@ -42,7 +42,14 @@ steps:
     SourceFolder: '$(build.SourcesDirectory)'
     Contents: '**\*.dacpac'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    flattenFolders: false
+    flattenFolders: true
+
+- task: CopyFiles@3
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**\deploy\**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)\deploy'
+    flattenFolders: true
 
 - task: PublishBuildArtifacts@1
   inputs:
