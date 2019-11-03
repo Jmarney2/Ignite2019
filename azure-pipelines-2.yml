@@ -44,11 +44,11 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     flattenFolders: true
 
-    - task: CopyFiles@2
-      inputs:
-        SourceFolder: '$(Build.ArtifactStagingDirectory)'
-        Contents: '**\deploy\**'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)\deploy'
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**\deploy\**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)\deploy'
 
 - task: PublishBuildArtifacts@1
   inputs:
